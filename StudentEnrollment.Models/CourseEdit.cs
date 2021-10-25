@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StudentEnrollment.Models
 {
-    class CourseEdit
+    public class CourseEdit
     {
         public int Id { get; set; }
         public string CourseName { get; set; }
