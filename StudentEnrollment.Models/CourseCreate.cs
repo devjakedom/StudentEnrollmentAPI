@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StudentEnrollment.Models
 {
-    class CourseCreate
+    public class CourseCreate
     {
         [Required]
         [MinLength(2, ErrorMessage = "Enter Course Info")]
