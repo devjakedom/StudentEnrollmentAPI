@@ -24,7 +24,7 @@ namespace StudentEnrollment.Data
                     var studentList = ctx.Students.Select
                         (e => new Student
                         {
-                            StudentId = e.StudentId
+                            StudentName = e.StudentName
                         }
                         );
                     return studentList.ToArray();
