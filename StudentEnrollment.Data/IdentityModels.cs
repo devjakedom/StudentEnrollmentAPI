@@ -36,7 +36,5 @@ namespace StudentEnrollment.Data
         {
             return new ApplicationDbContext();
         }
-
-        public DbSet<Student> Students { get; set; }
     }
 }
