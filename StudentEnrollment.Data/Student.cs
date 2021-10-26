@@ -8,5 +8,6 @@ namespace StudentEnrollment.Data
 {
     public class Student
     {
+        public int StudentId { get; set; }
     }
 }
