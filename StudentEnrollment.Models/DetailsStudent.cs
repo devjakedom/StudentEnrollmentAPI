@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentEnrollment.Data
+namespace StudentEnrollment.Models
 {
-    public class Student
+    public class DetailsStudent
     {
-        [Key]
-        public Guid StudentId { get; set; }
         public string StudentName { get; set; }
+        public Guid StudentId { get; set; }
         public int StudentGradeLevel { get; set; }
     }
 }

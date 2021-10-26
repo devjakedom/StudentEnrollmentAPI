@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using StudentEnrollment.Data;
 
 namespace StudentEnrollment.Data
 {
@@ -35,5 +36,7 @@ namespace StudentEnrollment.Data
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Student> Students { get; set; }
     }
 }
