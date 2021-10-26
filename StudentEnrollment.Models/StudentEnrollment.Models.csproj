@@ -73,6 +73,10 @@
     <Compile Include="CourseDetail.cs" />
     <Compile Include="CourseEdit.cs" />
     <Compile Include="CourseList.cs" />
+    <Compile Include="GradeLevelCreate.cs" />
+    <Compile Include="GradeLevelDetail.cs" />
+    <Compile Include="GradeLevelEdit.cs" />
+    <Compile Include="GradeLevelList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentList.cs" />
   </ItemGroup>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using StudentEnrollment.Data;
+using StudentEnrollment.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,64 @@ namespace StudentEnrollment.Services
 {
     public class GradeLevelService
     {
+        public bool CreateGradeLevel(GradeLevelCreate model)
+        {
+            var entity = new GradeLevel()
+            {
+                GradeNumber = model.GradeNumber,
+                GradeName = model.GradeName,
+            };
+            using(var ctx = new ApplicationDbContext())
+            {
+                ctx.GradeLevels.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public IEnumerable<GradeLevelList> GetGradeLevels()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.GradeLevels.Select
+                    (e => new GradeLevelList
+                        {
+                            GradeNumber = e.GradeNumber,
+                            GradeName = e.GradeName,
+                            StudentList = e.StudentList
+                        }
+                    );
+                return query.ToArray();
+            }
+        }
+        public GradeLevelDetail GetGradeByNumber(int gradeNumber)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.GradeLevels.Single(e => e.GradeNumber == gradeNumber);
+                return new GradeLevelDetail
+                {
+                    GradeNumber = entity.GradeNumber,
+                    GradeName = entity.GradeName,
+                    StudentList = entity.StudentList
+                };
+            }
+        }
+        public bool UpdateGradeLevel(GradeLevelEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.GradeLevels.Single(e => e.GradeNumber == model.GradeNumber);
+                entity.GradeName = model.GradeName;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteGradeLevel(int gradeNumber)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.GradeLevels.Single(e => e.GradeNumber == gradeNumber);
+                ctx.GradeLevels.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

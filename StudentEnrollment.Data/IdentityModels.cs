@@ -30,7 +30,7 @@ namespace StudentEnrollment.Data
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Enrollment> Enrollment { get; set; }
-        public DbSet<GradeLevel> GradeLevel { get; set; }
+        public DbSet<GradeLevel> GradeLevels { get; set; }
 
         public static ApplicationDbContext Create()
         {
