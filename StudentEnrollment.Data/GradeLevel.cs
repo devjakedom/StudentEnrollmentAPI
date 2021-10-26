@@ -15,7 +15,7 @@ namespace StudentEnrollment.Data
         [Required]
         public string GradeName { get; set; }
         [ForeignKey(nameof(Student))]
-        public List<Student> StudentList
+        public IEnumerable<Student> StudentList
         {
             get
             {
