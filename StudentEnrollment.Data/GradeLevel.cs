@@ -10,10 +10,12 @@ namespace StudentEnrollment.Data
 {
     public class GradeLevel
     {
-       [ Key, Required]
+       [Key]
+        public int GradeId { get; set; }
         public int GradeNumber { get; set; }
-        [Required]
+        
         public string GradeName { get; set; }
+        public virtual Student Student { get; set; }
         [ForeignKey(nameof(Student))]
         public IEnumerable<Student> StudentList
         {
@@ -31,6 +33,5 @@ namespace StudentEnrollment.Data
                 }
             }
         }
-        public virtual Student Student { get; set; }
     }
 }

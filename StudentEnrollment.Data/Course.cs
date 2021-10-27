@@ -11,13 +11,13 @@ namespace StudentEnrollment.Data
     public class Course
     {
         [Key]
-        public int Id { get; set; }
+        public int CourseId { get; set; }
         public string CourseDescription { get; set; }
         public string CourseName { get; set; }
+        public virtual GradeLevel GradeLevel { get; set; }
 
         [ForeignKey(nameof(GradeLevel))]
         public int GradeNumber { get; set; }
-        public virtual GradeLevel GradeLevel { get; set; }
         /*
           stretch goals
         //course start

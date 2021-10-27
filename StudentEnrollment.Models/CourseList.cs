@@ -8,7 +8,7 @@ namespace StudentEnrollment.Models
 {
     public class CourseList
     {
-        public int Id { get; set; }
+        public int CourseId { get; set; }
         public string CourseName { get; set; }
 
     }

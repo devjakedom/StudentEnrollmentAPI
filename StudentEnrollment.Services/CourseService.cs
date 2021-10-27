@@ -10,9 +10,9 @@ namespace StudentEnrollment.Services
 {
     public class CourseService
     {
-        private readonly Guid _userId;
-        public CourseService(Guid userId)
-        { _userId = userId; }
+        //private readonly Guid _userId;
+        //public CourseService(Guid userId)
+        //{ _userId = userId; }
 
 
         public bool CreateCourse(CourseCreate model)
@@ -43,7 +43,7 @@ namespace StudentEnrollment.Services
                         e =>
                         new CourseList
                         {
-                            Id = e.Id,
+                            CourseId = e.CourseId,
                             CourseName = e.CourseName                        
                         }
                         );
@@ -59,11 +59,11 @@ namespace StudentEnrollment.Services
                 var entity =
                     ctx
                     .Courses
-                    .Single(e => e.Id == id /* && e.OwnerId == _userId*/);
+                    .Single(e => e.CourseId == id /* && e.OwnerId == _userId*/);
                 return
                     new CourseDetail
                     {
-                        Id = entity.Id,
+                        CourseId = entity.CourseId,
                         CourseName = entity.CourseName,
                         Description = entity.CourseDescription
                         
@@ -78,7 +78,7 @@ namespace StudentEnrollment.Services
                 var entity =
                     ctx
                     .Courses
-                    .Single(e => e.Id == model.Id /*&& e.OwnerId == _userId*/);
+                    .Single(e => e.CourseId == model.CourseId /*&& e.OwnerId == _userId*/);
                 entity.CourseName = model.CourseName;
                 entity.CourseDescription = model.CourseDescription;
                // entity.GradeLevel = model.GradeLevel;
@@ -95,7 +95,7 @@ namespace StudentEnrollment.Services
                 var entity =
                       ctx
                       .Courses
-                      .Single(e => e.Id == courseId /*&& e.OwnerId == _userId*/);
+                      .Single(e => e.CourseId == courseId /*&& e.OwnerId == _userId*/);
                 ctx.Courses.Remove(entity);
 
                 return ctx.SaveChanges() == 1;

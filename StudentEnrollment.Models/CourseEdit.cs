@@ -9,7 +9,7 @@ namespace StudentEnrollment.Models
 {
     public class CourseEdit
     {
-        public int Id { get; set; }
+        public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string CourseDescription { get; set; }
         public GradeLevel GradeLevel { get; set; }

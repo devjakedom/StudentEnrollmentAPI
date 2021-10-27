@@ -9,7 +9,7 @@ namespace StudentEnrollment.Models
     public class DetailsStudent
     {
         public string StudentName { get; set; }
-        public Guid StudentId { get; set; }
-        public int StudentGradeLevel { get; set; }
+        public int StudentId { get; set; }
+        public int GradeId { get; set; }
     }
 }

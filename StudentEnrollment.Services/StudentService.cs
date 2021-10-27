@@ -10,19 +10,19 @@ namespace StudentEnrollment.Services
 {
     public class StudentService
     {
-        private readonly Guid _userId;
-        public StudentService(Guid userId)
-        {
-            _userId = userId;
-        }
+       // private readonly Guid _userId;
+       // public StudentService(Guid userId)
+        //{
+          //  _userId = userId;
+        //}
 
         public bool StudentCreate(CreateStudent model)
         {
             var entity = new Student()
             {
-                StudentId = _userId,
+                StudentId = model.StudentId,
                 StudentName = model.StudentName,
-                StudentGradeLevel = model.StudentGradeLevel
+                GradeId = model.GradeId
             };
             using(var ctx = new ApplicationDbContext())
             {
@@ -35,12 +35,14 @@ namespace StudentEnrollment.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Students.Where(e => e.StudentId == _userId).Select(e => new StudentList
+                var query = ctx.Students
+                   // .Where(e => e.StudentId == _userId)
+                    .Select(e => new StudentList
                 {
                     StudentId = e.StudentId,
                     StudentName = e.StudentName,
-                    StudentGradeLevel = e.StudentGradeLevel
-                });
+                    GradeId = e.GradeId
+                    });
 
                 return query.ToArray();
             }
@@ -50,12 +52,12 @@ namespace StudentEnrollment.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Students.Single(e => e.StudentId == _userId);
+                var entity = ctx.Students.Single(e => e.StudentId == id);
                 return new DetailsStudent
                 {
                     StudentId = entity.StudentId,
                     StudentName = entity.StudentName,
-                    StudentGradeLevel = entity.StudentGradeLevel
+                    GradeId = entity.GradeId
                 };
             }
         }
@@ -66,7 +68,7 @@ namespace StudentEnrollment.Services
             {
                 var entity = ctx.Students.Single(e => e.StudentName == model.StudentName);
                 entity.StudentName = model.StudentName;
-                entity.StudentGradeLevel = model.StudentGradeLevel;
+                entity.GradeId = model.GradeId;
 
                 return ctx.SaveChanges() == 1;
             }

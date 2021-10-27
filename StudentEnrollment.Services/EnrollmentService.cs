@@ -10,18 +10,18 @@ namespace StudentEnrollment.Services
 {
     public class EnrollmentService
     {
-        private readonly Guid _userId;
+        /*private readonly Guid _userId;
         public EnrollmentService(Guid userId)
         {
             _userId = userId;
         }
-
+        */
         public bool CreateEnrollment(CreateEnrollment model)
         {
             var entity =
                 new Enrollment()
                 {
-                    OwnerId = _userId,
+                    //OwnerId = _userId,
                     StudentId = model.StudentId,
                     StudentGrade = model.StudentGrade,
                     CourseId = model.CourseId,
@@ -40,7 +40,7 @@ namespace StudentEnrollment.Services
                 var query =
                     ctx
                     .Enrollment
-                    .Where(e => e.OwnerId == _userId)
+                   // .Where(e => e.OwnerId == _userId)
                     .Select(
                         e =>
                         new EnrollmentListItem
@@ -102,7 +102,7 @@ namespace StudentEnrollment.Services
                 var entity =
                     ctx
                     .Enrollment
-                    .Single(e => e.EnrollmentId == EnrollmentId && e.OwnerId == _userId);
+                    .Single(e => e.EnrollmentId == EnrollmentId /*&& e.OwnerId == _userId*/);
 
                 ctx.Enrollment.Remove(entity);
 

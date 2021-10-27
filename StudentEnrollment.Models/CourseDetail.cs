@@ -8,7 +8,7 @@ namespace StudentEnrollment.Models
 {
     public class CourseDetail
     {
-        public int Id { get; set; }
+        public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string Description { get; set; }
     }
