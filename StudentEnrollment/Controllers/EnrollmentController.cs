@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace StudentEnrollment.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class EnrollmentController : ApiController
     {
         

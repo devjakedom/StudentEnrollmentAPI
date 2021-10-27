@@ -26,7 +26,7 @@ namespace StudentEnrollment.Services
             };
             using(var ctx = new ApplicationDbContext())
             {
-                ctx.Students.Add(entity);
+                ctx.Student.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -35,7 +35,7 @@ namespace StudentEnrollment.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var query = ctx.Students
+                var query = ctx.Student
                    // .Where(e => e.StudentId == _userId)
                     .Select(e => new StudentList
                 {
@@ -52,7 +52,7 @@ namespace StudentEnrollment.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Students.Single(e => e.StudentId == id);
+                var entity = ctx.Student.Single(e => e.StudentId == id);
                 return new DetailsStudent
                 {
                     StudentId = entity.StudentId,
@@ -66,9 +66,23 @@ namespace StudentEnrollment.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Students.Single(e => e.StudentName == model.StudentName);
+                var entity = ctx.Student.Single(e => e.StudentName == model.StudentName);
                 entity.StudentName = model.StudentName;
                 entity.GradeId = model.GradeId;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteStudent(int Id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Student
+                    .Single(e => e.StudentId == Id /*&& e.OwnerId == _userId*/);
+
+                ctx.Student.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

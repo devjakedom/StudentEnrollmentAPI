@@ -19,7 +19,7 @@ namespace StudentEnrollment.Services
             };
             using(var ctx = new ApplicationDbContext())
             {
-                ctx.GradeLevels.Add(entity);
+                ctx.GradeLevel.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -27,7 +27,7 @@ namespace StudentEnrollment.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
-                var query = ctx.GradeLevels.Select
+                var query = ctx.GradeLevel.Select
                     (e => new GradeLevelList
                         {
                             GradeNumber = e.GradeNumber,
@@ -42,7 +42,7 @@ namespace StudentEnrollment.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.GradeLevels.Single(e => e.GradeNumber == gradeNumber);
+                var entity = ctx.GradeLevel.Single(e => e.GradeNumber == gradeNumber);
                 return new GradeLevelDetail
                 {
                     GradeNumber = entity.GradeNumber,
@@ -55,7 +55,7 @@ namespace StudentEnrollment.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.GradeLevels.Single(e => e.GradeNumber == model.GradeNumber);
+                var entity = ctx.GradeLevel.Single(e => e.GradeNumber == model.GradeNumber);
                 entity.GradeName = model.GradeName;
                 return ctx.SaveChanges() == 1;
             }
@@ -64,8 +64,8 @@ namespace StudentEnrollment.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.GradeLevels.Single(e => e.GradeNumber == gradeNumber);
-                ctx.GradeLevels.Remove(entity);
+                var entity = ctx.GradeLevel.Single(e => e.GradeNumber == gradeNumber);
+                ctx.GradeLevel.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
