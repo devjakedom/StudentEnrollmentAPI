@@ -15,8 +15,8 @@ namespace StudentEnrollment.Controllers
     {
         private StudentService CreateStudentService()
         {
-            var studentId = Guid.Parse(User.Identity.GetUserId());
-            var studentService = new StudentService(studentId);
+            //var studentId = Guid.Parse(User.Identity.GetUserId());
+            var studentService = new StudentService();
             return studentService;
         }
 
