@@ -30,6 +30,7 @@ namespace StudentEnrollment.Services
                 var query = ctx.GradeLevel.Select
                     (e => new GradeLevelList
                         {
+                            
                             GradeNumber = e.GradeNumber,
                             GradeName = e.GradeName,
                             StudentList = e.StudentList
@@ -38,11 +39,11 @@ namespace StudentEnrollment.Services
                 return query.ToArray();
             }
         }
-        public GradeLevelDetail GetGradeByNumber(int gradeNumber)
+        public GradeLevelDetail GetGradeByNumber(int gradeId)
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.GradeLevel.Single(e => e.GradeNumber == gradeNumber);
+                var entity = ctx.GradeLevel.Single(e => e.GradeId == gradeId);
                 return new GradeLevelDetail
                 {
                     GradeNumber = entity.GradeNumber,
@@ -55,16 +56,19 @@ namespace StudentEnrollment.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.GradeLevel.Single(e => e.GradeNumber == model.GradeNumber);
+                var entity = ctx
+                    .GradeLevel
+                    .Single(e => e.GradeId == model.GradeId);
                 entity.GradeName = model.GradeName;
+                entity.GradeNumber = model.GradeNumber;
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteGradeLevel(int gradeNumber)
+        public bool DeleteGradeLevel(int gradeId)
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.GradeLevel.Single(e => e.GradeNumber == gradeNumber);
+                var entity = ctx.GradeLevel.Single(e => e.GradeId == gradeId);
                 ctx.GradeLevel.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
