@@ -21,10 +21,10 @@ namespace StudentEnrollment.Data
         [ForeignKey(nameof(Course))]
         public int CourseId { get; set; }
 
-        public virtual Course Course { get; set; }
+        
 
 
-        public Guid OwnerId { get; set; }
+        //public Guid OwnerId { get; set; }
 
     }
 }

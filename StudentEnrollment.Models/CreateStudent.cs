@@ -12,8 +12,8 @@ namespace StudentEnrollment.Models
         [Required]
         public string StudentName { get; set; }
         [Required]
-        public Guid StudentId { get; set; }
+        public int StudentId { get; set; }
         [Required]
-        public int StudentGradeLevel { get; set; }
+        public int GradeId { get; set; }
     }
 }
