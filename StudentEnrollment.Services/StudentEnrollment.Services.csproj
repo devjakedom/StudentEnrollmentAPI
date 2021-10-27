@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -32,6 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -87,11 +91,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StudentEnrollment.Data\StudentEnrollment.Data.csproj">
-      <Project>{92aa87c9-a9f1-477f-8364-13a6d288b32e}</Project>
+
+      <Project>{92AA87C9-A9F1-477F-8364-13A6D288B32E}</Project>
       <Name>StudentEnrollment.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\StudentEnrollment.Models\StudentEnrollment.Models.csproj">
-      <Project>{0c3500f7-ac6d-48eb-b2ba-905ac953fffb}</Project>
+    <Project>{0C3500F7-AC6D-48EB-B2BA-905AC953FFFB}</Project>
+
+
+
       <Name>StudentEnrollment.Models</Name>
     </ProjectReference>
   </ItemGroup>

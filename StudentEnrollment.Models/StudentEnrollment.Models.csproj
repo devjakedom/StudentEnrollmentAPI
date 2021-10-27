@@ -66,6 +66,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateEnrollment.cs" />
+    <Compile Include="EnrollmentDetail.cs" />
+    <Compile Include="EnrollmentEdit.cs" />
+    <Compile Include="EnrollmentListItem.cs" />
     <Compile Include="CreateStudent.cs" />
     <Compile Include="DetailsStudent.cs" />
     <Compile Include="EditStudent.cs" />
