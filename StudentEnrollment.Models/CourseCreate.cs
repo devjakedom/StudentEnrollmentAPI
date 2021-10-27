@@ -16,7 +16,6 @@ namespace StudentEnrollment.Models
         [MaxLength(100, ErrorMessage = "Limit Yourself")]
 
         public string CourseName { get; set; }
-        [Required]
         public GradeLevel GradeLevel { get; set; }
         public string Description { get; set; }
 
