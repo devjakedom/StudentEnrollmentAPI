@@ -15,15 +15,17 @@ namespace StudentEnrollment.Data
         public int GradeNumber { get; set; }
         
         public string GradeName { get; set; }
-        public virtual Student Student { get; set; }
-        [ForeignKey(nameof(Student))]
-        public IEnumerable<Student> StudentList
-        {
-            get
+        //public virtual Student Student { get; set; }
+        //[ForeignKey(nameof(Student))]
+        public virtual ICollection<Student> StudentList { get; set; } = new List<Student>();
+        /*{
+            *//*get
             {
                 using (var ctx = new ApplicationDbContext())
                 {
-                    var studentList = ctx.Students.Select
+                    var studentList = ctx.Student
+                        .Where(e => e.GradeId == GradeNumber)
+                        .Select
                         (e => new Student
                         {
                             StudentName = e.StudentName
@@ -31,7 +33,7 @@ namespace StudentEnrollment.Data
                         );
                     return studentList.ToArray();
                 }
-            }
-        }
+            }*//*
+        }*/
     }
 }
