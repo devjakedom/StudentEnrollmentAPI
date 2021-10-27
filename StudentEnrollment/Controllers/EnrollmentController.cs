@@ -17,8 +17,8 @@ namespace StudentEnrollment.Controllers
         
             private EnrollmentService CreateEnrollmentService()
             {
-                var OwnerId = Guid.Parse(User.Identity.GetUserId());
-                var EnrollmentService = new EnrollmentService(OwnerId);
+                //var OwnerId = Guid.Parse(User.Identity.GetUserId());
+                var EnrollmentService = new EnrollmentService();
                 return EnrollmentService;
             }
             public IHttpActionResult Get()
