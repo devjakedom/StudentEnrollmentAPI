@@ -66,14 +66,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="CreateEnrollment.cs" />
     <Compile Include="EnrollmentDetail.cs" />
     <Compile Include="EnrollmentEdit.cs" />
     <Compile Include="EnrollmentListItem.cs" />
+    <Compile Include="CreateStudent.cs" />
+    <Compile Include="DetailsStudent.cs" />
+    <Compile Include="EditStudent.cs" />
+    <Compile Include="CourseCreate.cs" />
+    <Compile Include="CourseDetail.cs" />
+    <Compile Include="CourseEdit.cs" />
+    <Compile Include="CourseList.cs" />
+    <Compile Include="GradeLevelCreate.cs" />
+    <Compile Include="GradeLevelDetail.cs" />
+    <Compile Include="GradeLevelEdit.cs" />
+    <Compile Include="GradeLevelList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StudentEnrollment.Data\StudentEnrollment.Data.csproj">
+      <Project>{92AA87C9-A9F1-477F-8364-13A6D288B32E}</Project>
+      <Name>StudentEnrollment.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
