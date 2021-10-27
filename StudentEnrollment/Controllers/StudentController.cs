@@ -10,7 +10,7 @@ using System.Web.Http;
 
 namespace StudentEnrollment.Controllers
 {
-    [Authorize]
+   // [Authorize]
     public class StudentController : ApiController
     {
         private StudentService CreateStudentService()
@@ -57,6 +57,16 @@ namespace StudentEnrollment.Controllers
             {
                 return InternalServerError();
             }
+
+            return Ok();
+        }
+
+        public IHttpActionResult Delete(int Id)
+        {
+            var service = CreateStudentService();
+
+            if (!service.DeleteStudent(Id))
+                return InternalServerError();
 
             return Ok();
         }
