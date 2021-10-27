@@ -11,6 +11,6 @@ namespace StudentEnrollment.Models
     {
         public int GradeNumber { get; set; }
         public string GradeName { get; set; }
-        public List<Student> StudentList { get; set; }
+        public IEnumerable<Student> StudentList { get; set; }
     }
 }

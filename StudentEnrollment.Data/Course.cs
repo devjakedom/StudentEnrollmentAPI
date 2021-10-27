@@ -16,9 +16,10 @@ namespace StudentEnrollment.Data
         public string CourseName { get; set; }
 
         [ForeignKey(nameof(GradeLevel))]
-        public int GradeId { get; set; }
+        public int GradeNumber { get; set; }
         public virtual GradeLevel GradeLevel { get; set; }
         /*
+          stretch goals
         //course start
         [Required]
         public DateTime StartDate { set; get; }

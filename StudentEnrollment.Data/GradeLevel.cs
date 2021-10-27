@@ -10,7 +10,7 @@ namespace StudentEnrollment.Data
 {
     public class GradeLevel
     {
-        [Required]
+       [ Key, Required]
         public int GradeNumber { get; set; }
         [Required]
         public string GradeName { get; set; }

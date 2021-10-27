@@ -22,7 +22,7 @@ namespace StudentEnrollment.Services
                 {
                     CourseDescription = model.Description,
                     CourseName = model.CourseName,
-                    GradeLevel = model.GradeLevel
+                    //GradeLevel = model.GradeLevel
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -81,7 +81,7 @@ namespace StudentEnrollment.Services
                     .Single(e => e.Id == model.Id /*&& e.OwnerId == _userId*/);
                 entity.CourseName = model.CourseName;
                 entity.CourseDescription = model.CourseDescription;
-                entity.GradeLevel = model.GradeLevel;
+               // entity.GradeLevel = model.GradeLevel;
 
                 return ctx.SaveChanges() == 1;
 
