@@ -1,7 +1,4 @@
 ﻿using Microsoft.AspNet.Identity;
-using StudentEnrollment.Data;
-using StudentEnrollment.Models;
-using StudentEnrollment.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

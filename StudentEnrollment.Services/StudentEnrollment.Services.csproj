@@ -92,17 +92,13 @@
   <ItemGroup>
     <ProjectReference Include="..\StudentEnrollment.Data\StudentEnrollment.Data.csproj">
 
-//      <Project>{92AA87C9-A9F1-477F-8364-13A6D288B32E}</Project>
-//      <Name>StudentEnrollment.Data</Name>
- //   </ProjectReference>
-  //  <ProjectReference Include="..\StudentEnrollment.Models\StudentEnrollment.Models.csproj">
-  //    <Project>{0C3500F7-AC6D-48EB-B2BA-905AC953FFFB}</Project>
-
-      <Project>{92aa87c9-a9f1-477f-8364-13a6d288b32e}</Project>
+      <Project>{92AA87C9-A9F1-477F-8364-13A6D288B32E}</Project>
       <Name>StudentEnrollment.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\StudentEnrollment.Models\StudentEnrollment.Models.csproj">
-      <Project>{0c3500f7-ac6d-48eb-b2ba-905ac953fffb}</Project>
+    <Project>{0C3500F7-AC6D-48EB-B2BA-905AC953FFFB}</Project>
+
+
 
       <Name>StudentEnrollment.Models</Name>
     </ProjectReference>
