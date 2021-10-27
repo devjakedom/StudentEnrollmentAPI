@@ -17,9 +17,9 @@ namespace StudentEnrollment.Data
         public string GradeName { get; set; }
         //public virtual Student Student { get; set; }
         //[ForeignKey(nameof(Student))]
-        public IEnumerable<Student> StudentList
-        {
-            get
+        public virtual ICollection<Student> StudentList { get; set; } = new List<Student>();
+        /*{
+            *//*get
             {
                 using (var ctx = new ApplicationDbContext())
                 {
@@ -33,7 +33,7 @@ namespace StudentEnrollment.Data
                         );
                     return studentList.ToArray();
                 }
-            }
-        }
+            }*//*
+        }*/
     }
 }
