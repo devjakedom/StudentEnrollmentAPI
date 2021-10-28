@@ -14,7 +14,7 @@ namespace StudentEnrollment.Services
         {
             var entity = new GradeLevel()
             {
-                //GradeId = model.GradeId,
+                GradeId = model.GradeId,
                 GradeNumber = model.GradeNumber,
                 GradeName = model.GradeName,
             };
@@ -48,6 +48,7 @@ namespace StudentEnrollment.Services
                 var entity = ctx.GradeLevel.Single(e => e.GradeNumber == gradeNumber);
                 return new GradeLevelDetail
                 {
+                    GradeId = entity.GradeId,
                     GradeNumber = entity.GradeNumber,
                     GradeName = entity.GradeName,
                     StudentList = entity.StudentList
