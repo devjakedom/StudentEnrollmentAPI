@@ -27,6 +27,13 @@ namespace StudentEnrollment.Controllers
             return Ok(students);
         }
 
+        public IHttpActionResult Get(int id)
+        {
+            StudentService studentService = CreateStudentService();
+            var students = studentService.GetStudentById(id);
+            return Ok(students);
+        }
+
         public IHttpActionResult Post(Models.CreateStudent student)
         {
             if(!ModelState.IsValid)
