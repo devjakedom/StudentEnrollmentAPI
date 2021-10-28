@@ -14,7 +14,7 @@ namespace StudentEnrollment.Services
         {
             var entity = new GradeLevel()
             {
-                GradeId = model.GradeId,
+                //GradeId = model.GradeId,
                 GradeNumber = model.GradeNumber,
                 GradeName = model.GradeName,
             };
@@ -34,7 +34,7 @@ namespace StudentEnrollment.Services
                             
                             GradeNumber = e.GradeNumber,
                             GradeName = e.GradeName,
-                            StudentList = e.StudentList,
+                            //StudentList = e.StudentList,
                             GradeId = e.GradeId
                         }
                     );
@@ -67,11 +67,11 @@ namespace StudentEnrollment.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteGradeLevel(int gradeNumber)
+        public bool DeleteGradeLevel(int gradeId)
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.GradeLevel.Single(e => e.GradeNumber == gradeNumber);
+                var entity = ctx.GradeLevel.Single(e => e.GradeId == gradeId);
                 ctx.GradeLevel.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
