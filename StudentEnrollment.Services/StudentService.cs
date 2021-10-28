@@ -66,21 +66,21 @@ namespace StudentEnrollment.Services
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.Student.Single(e => e.StudentName == model.StudentName);
+                var entity = ctx.Student.Single(e => e.StudentId == model.StudentId);
                 entity.StudentName = model.StudentName;
-                entity.GradeId = model.GradeId;
+                //entity.GradeId = model.GradeId;
 
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteStudent(int Id)
+        public bool DeleteStudent(int StudentId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                     .Student
-                    .Single(e => e.StudentId == Id /*&& e.OwnerId == _userId*/);
+                    .Single(e => e.StudentId == StudentId /*&& e.OwnerId == _userId*/);
 
                 ctx.Student.Remove(entity);
 

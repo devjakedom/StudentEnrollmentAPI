@@ -61,11 +61,11 @@ namespace StudentEnrollment.Controllers
             return Ok();
         }
 
-        public IHttpActionResult Delete(int Id)
+        public IHttpActionResult Delete(int StudentId)
         {
             var service = CreateStudentService();
 
-            if (!service.DeleteStudent(Id))
+            if (!service.DeleteStudent(StudentId))
                 return InternalServerError();
 
             return Ok();

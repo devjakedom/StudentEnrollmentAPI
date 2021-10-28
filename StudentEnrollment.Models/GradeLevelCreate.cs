@@ -9,6 +9,7 @@ namespace StudentEnrollment.Models
 {
     public class GradeLevelCreate
     {
+        public int GradeId { get; set; }
         public int GradeNumber { get; set; }
         public string GradeName { get; set; }
         public IEnumerable<Student> StudentList { get; set; }

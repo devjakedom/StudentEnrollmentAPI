@@ -38,13 +38,13 @@ namespace StudentEnrollment.Services
                 var query =
                     ctx
                     .Courses
-                   /* .Where(e => e.OwnerId == _userId)*/
+                    /* .Where(e => e.OwnerId == _userId)*/
                     .Select(
                         e =>
                         new CourseList
                         {
                             CourseId = e.CourseId,
-                            CourseName = e.CourseName                        
+                            CourseName = e.CourseName
                         }
                         );
                 return query.ToArray();
@@ -66,7 +66,7 @@ namespace StudentEnrollment.Services
                         CourseId = entity.CourseId,
                         CourseName = entity.CourseName,
                         Description = entity.CourseDescription
-                        
+
                     };
             }
         }
@@ -81,7 +81,7 @@ namespace StudentEnrollment.Services
                     .Single(e => e.CourseId == model.CourseId /*&& e.OwnerId == _userId*/);
                 entity.CourseName = model.CourseName;
                 entity.CourseDescription = model.CourseDescription;
-               // entity.GradeLevel = model.GradeLevel;
+                // entity.GradeLevel = model.GradeLevel;
 
                 return ctx.SaveChanges() == 1;
 
