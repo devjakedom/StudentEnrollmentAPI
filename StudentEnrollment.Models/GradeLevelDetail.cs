@@ -12,6 +12,6 @@ namespace StudentEnrollment.Models
         public int GradeId { get; set;}
         public int GradeNumber { get; set; }
         public string GradeName { get; set; }
-        public IEnumerable<Student> StudentList { get; set; }
+        public virtual ICollection<Student> StudentList { get; set; } = new List<Student>();
     }
 }

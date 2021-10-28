@@ -41,11 +41,11 @@ namespace StudentEnrollment.Services
                 return query.ToArray();
             }
         }
-        public GradeLevelDetail GetGradeByNumber(int gradeId)
+        public GradeLevelDetail GetGradeByNumber(int gradeNumber)
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.GradeLevel.Single(e => e.GradeId == gradeId);
+                var entity = ctx.GradeLevel.Single(e => e.GradeNumber == gradeNumber);
                 return new GradeLevelDetail
                 {
                     GradeNumber = entity.GradeNumber,
@@ -66,11 +66,11 @@ namespace StudentEnrollment.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool DeleteGradeLevel(int gradeId)
+        public bool DeleteGradeLevel(int gradeNumber)
         {
             using(var ctx = new ApplicationDbContext())
             {
-                var entity = ctx.GradeLevel.Single(e => e.GradeId == gradeId);
+                var entity = ctx.GradeLevel.Single(e => e.GradeNumber == gradeNumber);
                 ctx.GradeLevel.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
