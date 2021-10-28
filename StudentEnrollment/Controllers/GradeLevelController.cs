@@ -46,10 +46,10 @@ namespace StudentEnrollment.Controllers
                 return InternalServerError();
             return Ok();
         }
-        public IHttpActionResult Delete(int gradeId)
+        public IHttpActionResult Delete(int gradeNumber)
         {
             var service = CreateGradeLevelService();
-            if (!service.DeleteGradeLevel(gradeId))
+            if (!service.DeleteGradeLevel(gradeNumber))
                 return InternalServerError();
             return Ok();
         }
