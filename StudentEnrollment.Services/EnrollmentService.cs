@@ -86,7 +86,7 @@ namespace StudentEnrollment.Services
                     .Enrollment
                     .Single(e => e.EnrollmentId == model.EnrollmentId);
 
-                //entity.EnrollmentId = model.EnrollmentId;
+                entity.EnrollmentId = model.EnrollmentId;
                 entity.CourseId = model.CourseId;
                 entity.StudentId = model.StudentId;
                 entity.StudentGrade = model.StudentGrade;
