@@ -14,6 +14,7 @@ namespace StudentEnrollment.Services
         {
             var entity = new GradeLevel()
             {
+                //GradeId = model.GradeId,
                 GradeNumber = model.GradeNumber,
                 GradeName = model.GradeName,
             };
@@ -33,7 +34,8 @@ namespace StudentEnrollment.Services
                             
                             GradeNumber = e.GradeNumber,
                             GradeName = e.GradeName,
-                            StudentList = e.StudentList
+                            StudentList = e.StudentList,
+                            GradeId = e.GradeId
                         }
                     );
                 return query.ToArray();

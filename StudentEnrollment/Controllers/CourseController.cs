@@ -61,6 +61,5 @@ namespace StudentEnrollment.Controllers
                 return InternalServerError();
             return Ok();
         }
-
     }
 }

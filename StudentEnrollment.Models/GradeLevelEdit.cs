@@ -8,7 +8,7 @@ namespace StudentEnrollment.Models
 {
     public class GradeLevelEdit
     {
-        public int GradeId { get; set; }
+        public int GradeId { get; set;}
         public int GradeNumber { get; set; }
         public string GradeName { get; set; }
     }
