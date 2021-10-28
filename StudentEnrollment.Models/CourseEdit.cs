@@ -12,7 +12,6 @@ namespace StudentEnrollment.Models
         public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string CourseDescription { get; set; }
-        public GradeLevel GradeLevel { get; set; }
-        //public int GradeId { get; set; }
+        public int GradeId { get; set; }
     } 
 }
