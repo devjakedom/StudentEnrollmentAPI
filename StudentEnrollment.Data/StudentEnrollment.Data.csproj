@@ -84,6 +84,10 @@
     <Compile Include="Migrations\202110271845459_InitialStuff.Designer.cs">
       <DependentUpon>202110271845459_InitialStuff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110281424051_UpdateCourse.cs" />
+    <Compile Include="Migrations\202110281424051_UpdateCourse.Designer.cs">
+      <DependentUpon>202110281424051_UpdateCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -96,6 +100,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202110271845459_InitialStuff.resx">
       <DependentUpon>202110271845459_InitialStuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110281424051_UpdateCourse.resx">
+      <DependentUpon>202110281424051_UpdateCourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
