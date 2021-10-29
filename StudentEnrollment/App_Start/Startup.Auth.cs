@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using StudentEnrollment.Providers;
 using StudentEnrollment.Models;
+using StudentEnrollment.Data;
 
 namespace StudentEnrollment
 {

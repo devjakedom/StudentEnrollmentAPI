@@ -312,8 +312,16 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StudentEnrollment.Data\StudentEnrollment.Data.csproj">
-      <Project>{92aa87c9-a9f1-477f-8364-13a6d288b32e}</Project>
+      <Project>{92AA87C9-A9F1-477F-8364-13A6D288B32E}</Project>
       <Name>StudentEnrollment.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentEnrollment.Models\StudentEnrollment.Models.csproj">
+      <Project>{0C3500F7-AC6D-48EB-B2BA-905AC953FFFB}</Project>
+      <Name>StudentEnrollment.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StudentEnrollment.Services\StudentEnrollment.Services.csproj">
+      <Project>{3FB1E2F7-BCB3-49C2-AD4E-86A7E62E80F5}</Project>
+      <Name>StudentEnrollment.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
