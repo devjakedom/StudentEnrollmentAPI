@@ -88,6 +88,14 @@
     <Compile Include="Migrations\202110281424051_UpdateCourse.Designer.cs">
       <DependentUpon>202110281424051_UpdateCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110291357546_addedGradeIdtoEnrollment.cs" />
+    <Compile Include="Migrations\202110291357546_addedGradeIdtoEnrollment.Designer.cs">
+      <DependentUpon>202110291357546_addedGradeIdtoEnrollment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110302246092_nwdaa.cs" />
+    <Compile Include="Migrations\202110302246092_nwdaa.Designer.cs">
+      <DependentUpon>202110302246092_nwdaa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -103,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110281424051_UpdateCourse.resx">
       <DependentUpon>202110281424051_UpdateCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110291357546_addedGradeIdtoEnrollment.resx">
+      <DependentUpon>202110291357546_addedGradeIdtoEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110302246092_nwdaa.resx">
+      <DependentUpon>202110302246092_nwdaa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
