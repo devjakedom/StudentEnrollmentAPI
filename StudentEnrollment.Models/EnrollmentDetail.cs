@@ -12,7 +12,7 @@ namespace StudentEnrollment.Models
 
         public int StudentId { get; set; }
 
-        public int StudentGrade { get; set; }
+        public int GradeId { get; set; }
 
         public int CourseId { get; set; }
     }

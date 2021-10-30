@@ -23,7 +23,7 @@ namespace StudentEnrollment.Services
                 {
                     //OwnerId = _userId,
                     StudentId = model.StudentId,
-                    StudentGrade = model.StudentGrade,
+                    GradeId = model.GradeId,
                     CourseId = model.CourseId,
                    
                 };
@@ -47,7 +47,7 @@ namespace StudentEnrollment.Services
                         {
                             EnrollmentId = e.EnrollmentId,
                             StudentId = e.StudentId,
-                            StudentGrade = e.StudentGrade,
+                            GradeId = e.GradeId,
                             CourseId = e.CourseId,
                          
                         }
@@ -57,26 +57,26 @@ namespace StudentEnrollment.Services
             }
         }
 
-        //public EnrollmentDetails GetPersonById(int id)
-        //{
-          //  using (var ctx = new ApplicationDbContext())
-            //{
-              //  var entity =
-                //    ctx
-                  //  .Enrollment
-                    //.Single(e => e.EnrollmentId == id && e.OwnerId == _userId);
-    //            return
-      //              new PersonDetails
-        //            {
-          //              PersonId = entity.PersonId,
-            //            FirstName = entity.FirstName,
-              //          LastName = entity.LastName,
-                //        State = entity.State,
-                  //      StreetAddress = entity.StreetAddress,
-                    //    City = entity.City
-//                    };
-  //          }
-    //    }
+        /*public EnrollmentDetails GetPersonById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Enrollment
+                    .Single(e => e.EnrollmentId == id && e.OwnerId == _userId);
+                return
+                   new PersonDetails
+                    {
+                        PersonId = entity.PersonId,
+                        FirstName = entity.FirstName,
+                        LastName = entity.LastName,
+                        State = entity.State,
+                      StreetAddress = entity.StreetAddress,
+                       City = entity.City
+                    };
+            }
+        }*/
         public bool EditEnrollment(EnrollmentEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -89,7 +89,7 @@ namespace StudentEnrollment.Services
                 entity.EnrollmentId = model.EnrollmentId;
                 entity.CourseId = model.CourseId;
                 entity.StudentId = model.StudentId;
-                entity.StudentGrade = model.StudentGrade;
+                entity.GradeId = model.GradeId;
               
 
                 return ctx.SaveChanges() == 1;
