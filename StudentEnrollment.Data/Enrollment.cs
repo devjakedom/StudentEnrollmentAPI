@@ -18,7 +18,13 @@ namespace StudentEnrollment.Data
         public int StudentId { get; set; }
         //public virtual GradeLevel GradeLevel { get; set; }
         //[ForeignKey(nameof(GradeLevel))]
-        public int GradeId { get; set; }
+        public int GradeId
+        {
+            get
+            {
+                return Student.GradeId;
+            }
+        }
         public virtual Course Course { get; set; }
         [ForeignKey(nameof(Course))]
         public int CourseId { get; set; }
