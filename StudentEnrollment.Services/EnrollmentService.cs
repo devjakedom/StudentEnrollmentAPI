@@ -24,15 +24,26 @@ namespace StudentEnrollment.Services
                     //OwnerId = _userId,
                     StudentId = model.StudentId,
                     GradeId = model.GradeId,
-                    CourseId = model.CourseId,
-                   
+                    CourseId = model.CourseId
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Enrollment.Add(entity);
+                var query =
+                    ctx.Courses
+                 .Single(e=> e.CourseId == entity.CourseId);
+
+                if (!query.InSession)
+                {
+                    return false;
+                }
+
+                ctx.Enrollment
+                   .Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
+
+
         public IEnumerable<EnrollmentListItem> GetEnrollmentList()
         {
             using (var ctx = new ApplicationDbContext())
@@ -40,7 +51,7 @@ namespace StudentEnrollment.Services
                 var query =
                     ctx
                     .Enrollment
-                   // .Where(e => e.OwnerId == _userId)
+                    // .Where(e => e.OwnerId == _userId)
                     .Select(
                         e =>
                         new EnrollmentListItem
@@ -49,7 +60,7 @@ namespace StudentEnrollment.Services
                             StudentId = e.StudentId,
                             GradeId = e.GradeId,
                             CourseId = e.CourseId,
-                         
+
                         }
                         );
                 return query.ToArray();
@@ -90,7 +101,7 @@ namespace StudentEnrollment.Services
                 entity.CourseId = model.CourseId;
                 entity.StudentId = model.StudentId;
                 entity.GradeId = model.GradeId;
-              
+
 
                 return ctx.SaveChanges() == 1;
             }

@@ -28,7 +28,7 @@ namespace StudentEnrollment.Controllers
                 return Ok(Enrollment);
             }
             public IHttpActionResult Post(CreateEnrollment enrollment)
-            {
+            {      
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
 

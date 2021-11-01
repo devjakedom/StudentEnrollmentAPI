@@ -13,5 +13,7 @@ namespace StudentEnrollment.Models
         public string CourseName { get; set; }
         public string CourseDescription { get; set; }
         public int GradeId { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
     } 
 }
