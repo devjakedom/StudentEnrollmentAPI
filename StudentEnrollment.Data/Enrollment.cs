@@ -28,8 +28,13 @@ namespace StudentEnrollment.Data
         public virtual Course Course { get; set; }
         [ForeignKey(nameof(Course))]
         public int CourseId { get; set; }
+        public bool InSession
+        {
+            get
+            { return Course.InSession; }
+        }
 
-        
+
 
 
         //public Guid OwnerId { get; set; }

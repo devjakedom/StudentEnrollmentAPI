@@ -18,8 +18,8 @@ namespace StudentEnrollment.Data
 
         [ForeignKey(nameof(GradeLevel))]
         public int GradeId { get; set; }
-        /*
-          stretch goals
+
+
         //course start
         [Required]
         public DateTime StartDate { set; get; }
@@ -39,7 +39,21 @@ namespace StudentEnrollment.Data
                 else { return false; }
 
             }
+            set
+            {
+                bool val = true;
+                System.TimeSpan diff = EndDate.Subtract(DateTime.Now);
+                int days = diff.Days;
+                if (days > 0)
+                { val = value; }
+                else
+                {
+                    val = false;
+                    val = value;
+                }
+
+            }
         }
-        */
+
     }
 }

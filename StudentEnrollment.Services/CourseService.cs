@@ -22,7 +22,9 @@ namespace StudentEnrollment.Services
                 {
                     CourseDescription = model.Description,
                     CourseName = model.CourseName,
-                    GradeId = model.GradeId
+                    GradeId = model.GradeId,
+                    StartDate = model.StartDate,
+                    EndDate = model.EndDate
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -44,7 +46,8 @@ namespace StudentEnrollment.Services
                         new CourseList
                         {
                             CourseId = e.CourseId,
-                            CourseName = e.CourseName
+                            CourseName = e.CourseName,
+                            InSession = e.InSession
                         }
                         );
                 return query.ToArray();
@@ -71,7 +74,27 @@ namespace StudentEnrollment.Services
             }
         }
 
-        public bool UpdateCourse(CourseEdit model)
+        public IEnumerable<CourseList> GetCoursesInSession() 
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Courses
+                    .Where(e => e.InSession == true)
+                    .Select(
+                        e =>
+                        new CourseList
+                        {
+                            CourseId = e.CourseId,
+                            CourseName = e.CourseName,
+                         
+                        }
+                        );
+                return query.ToArray();
+            }
+        }
+            public bool UpdateCourse(CourseEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {

@@ -15,5 +15,8 @@ namespace StudentEnrollment.Models
         public int GradeId { get; set; }
         
         public int CourseId { get; set; }
+
+        public bool InSession { get; set; }
+
     }
 }
