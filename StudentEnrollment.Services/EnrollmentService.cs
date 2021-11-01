@@ -23,8 +23,9 @@ namespace StudentEnrollment.Services
                 {
                     //OwnerId = _userId,
                     StudentId = model.StudentId,
-                    GradeId = model.GradeId,
+                   // GradeId = model.GradeId,
                     CourseId = model.CourseId
+
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -58,7 +59,7 @@ namespace StudentEnrollment.Services
                         {
                             EnrollmentId = e.EnrollmentId,
                             StudentId = e.StudentId,
-                            GradeId = e.GradeId,
+                            GradeId = e.Student.GradeId,
                             CourseId = e.CourseId,
 
                         }
@@ -100,7 +101,6 @@ namespace StudentEnrollment.Services
                 entity.EnrollmentId = model.EnrollmentId;
                 entity.CourseId = model.CourseId;
                 entity.StudentId = model.StudentId;
-                entity.GradeId = model.GradeId;
 
 
                 return ctx.SaveChanges() == 1;
