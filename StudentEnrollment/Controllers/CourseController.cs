@@ -43,6 +43,14 @@ namespace StudentEnrollment.Controllers
             return Ok(course);
         }
 
+        [Route("api/Course/InSession")]
+        public IHttpActionResult GetCoursesInSession() //controller
+        {
+            CourseService courseService = CreateCourseService();
+            var course = courseService.GetCoursesInSession();
+            return Ok(course);
+        }
+
         public IHttpActionResult Put(CourseEdit course)
         {
             if (!ModelState.IsValid)

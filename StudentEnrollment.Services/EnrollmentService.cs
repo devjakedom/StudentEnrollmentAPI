@@ -23,16 +23,28 @@ namespace StudentEnrollment.Services
                 {
                     //OwnerId = _userId,
                     StudentId = model.StudentId,
-                    StudentGrade = model.StudentGrade,
-                    CourseId = model.CourseId,
-                   
+                   // GradeId = model.GradeId,
+                    CourseId = model.CourseId
+
                 };
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Enrollment.Add(entity);
+                var query =
+                    ctx.Courses
+                 .Single(e=> e.CourseId == entity.CourseId);
+
+                if (!query.InSession)
+                {
+                    return false;
+                }
+
+                ctx.Enrollment
+                   .Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
+
+
         public IEnumerable<EnrollmentListItem> GetEnrollmentList()
         {
             using (var ctx = new ApplicationDbContext())
@@ -40,16 +52,16 @@ namespace StudentEnrollment.Services
                 var query =
                     ctx
                     .Enrollment
-                   // .Where(e => e.OwnerId == _userId)
+                    // .Where(e => e.OwnerId == _userId)
                     .Select(
                         e =>
                         new EnrollmentListItem
                         {
                             EnrollmentId = e.EnrollmentId,
                             StudentId = e.StudentId,
-                            StudentGrade = e.StudentGrade,
+                            GradeId = e.Student.GradeId,
                             CourseId = e.CourseId,
-                         
+
                         }
                         );
                 return query.ToArray();
@@ -57,26 +69,26 @@ namespace StudentEnrollment.Services
             }
         }
 
-        //public EnrollmentDetails GetPersonById(int id)
-        //{
-          //  using (var ctx = new ApplicationDbContext())
-            //{
-              //  var entity =
-                //    ctx
-                  //  .Enrollment
-                    //.Single(e => e.EnrollmentId == id && e.OwnerId == _userId);
-    //            return
-      //              new PersonDetails
-        //            {
-          //              PersonId = entity.PersonId,
-            //            FirstName = entity.FirstName,
-              //          LastName = entity.LastName,
-                //        State = entity.State,
-                  //      StreetAddress = entity.StreetAddress,
-                    //    City = entity.City
-//                    };
-  //          }
-    //    }
+        /*public EnrollmentDetails GetPersonById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Enrollment
+                    .Single(e => e.EnrollmentId == id && e.OwnerId == _userId);
+                return
+                   new PersonDetails
+                    {
+                        PersonId = entity.PersonId,
+                        FirstName = entity.FirstName,
+                        LastName = entity.LastName,
+                        State = entity.State,
+                      StreetAddress = entity.StreetAddress,
+                       City = entity.City
+                    };
+            }
+        }*/
         public bool EditEnrollment(EnrollmentEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -89,8 +101,7 @@ namespace StudentEnrollment.Services
                 entity.EnrollmentId = model.EnrollmentId;
                 entity.CourseId = model.CourseId;
                 entity.StudentId = model.StudentId;
-                entity.StudentGrade = model.StudentGrade;
-              
+
 
                 return ctx.SaveChanges() == 1;
             }
