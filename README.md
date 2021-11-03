@@ -96,5 +96,4 @@ https://trello.com/invite/b/60v5vxNB/10a10a54802db504b3c53061a108e781/student-en
 * Create Enrollment
 * Update Enrollment
 * Get All Enrollment Items
-* Get Enrollment by ID
 * Delete Enrollment
