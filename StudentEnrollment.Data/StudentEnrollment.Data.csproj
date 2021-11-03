@@ -112,6 +112,10 @@
     <Compile Include="Migrations\202111031525089_update.Designer.cs">
       <DependentUpon>202111031525089_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111031847430_update1.cs" />
+    <Compile Include="Migrations\202111031847430_update1.Designer.cs">
+      <DependentUpon>202111031847430_update1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -145,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111031525089_update.resx">
       <DependentUpon>202111031525089_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111031847430_update1.resx">
+      <DependentUpon>202111031847430_update1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
