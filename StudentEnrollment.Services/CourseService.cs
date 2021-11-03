@@ -68,8 +68,10 @@ namespace StudentEnrollment.Services
                     {
                         CourseId = entity.CourseId,
                         CourseName = entity.CourseName,
-                        Description = entity.CourseDescription
-
+                        Description = entity.CourseDescription,
+                        InSession = entity.InSession,
+                        StartDate = entity.StartDate,
+                        EndDate = entity.EndDate
                     };
             }
         }
@@ -88,7 +90,7 @@ namespace StudentEnrollment.Services
                         {
                             CourseId = e.CourseId,
                             CourseName = e.CourseName,
-                         
+                            InSession = e.InSession
                         }
                         );
                 return query.ToArray();
