@@ -104,7 +104,7 @@
     <Compile Include="Migrations\202111011830360_SquiffyInSession.cs" />
     <Compile Include="Migrations\202111011830360_SquiffyInSession.Designer.cs">
       <DependentUpon>202111011830360_SquiffyInSession.cs</DependentUpon>
-
+ </Compile>
     <Compile Include="Migrations\202111011713094_MigrateThingsForStuff.cs" />
     <Compile Include="Migrations\202111011713094_MigrateThingsForStuff.Designer.cs">
       <DependentUpon>202111011713094_MigrateThingsForStuff.cs</DependentUpon>
@@ -138,7 +138,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111011830360_SquiffyInSession.resx">
       <DependentUpon>202111011830360_SquiffyInSession.cs</DependentUpon>
-
+ </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111011713094_MigrateThingsForStuff.resx">
       <DependentUpon>202111011713094_MigrateThingsForStuff.cs</DependentUpon>
 
