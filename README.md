@@ -80,7 +80,8 @@ https://trello.com/invite/b/60v5vxNB/10a10a54802db504b3c53061a108e781/student-en
 
 * Create GradeLevel
 * Update GradeLevel
-* Get Students by GradeLevel
+* Get GradeLevel by Id
+* Get All GradeLevels
 * Delete GradeLevel
 
 ### Course
@@ -89,6 +90,7 @@ https://trello.com/invite/b/60v5vxNB/10a10a54802db504b3c53061a108e781/student-en
 * Update Course
 * Get Course by ID
 * Get All Courses
+* Get Course by Course in session
 * Delete Course
 
 ### Enrollment
