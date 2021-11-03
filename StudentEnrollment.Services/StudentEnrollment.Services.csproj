@@ -87,7 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StudentEnrollment.Data\StudentEnrollment.Data.csproj">
-      <Project>{92AA87C9-A9F1-477F-8364-13A6D288B32E}</Project>
+      <Project>{92aa87c9-a9f1-477f-8364-13a6d288b32e}</Project>
       <Name>StudentEnrollment.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\StudentEnrollment.Models\StudentEnrollment.Models.csproj">
