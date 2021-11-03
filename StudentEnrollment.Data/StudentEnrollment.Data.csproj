@@ -96,7 +96,6 @@
     <Compile Include="Migrations\202110302246092_nwdaa.Designer.cs">
       <DependentUpon>202110302246092_nwdaa.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Migrations\202111011757228_UpdateInSession.cs" />
     <Compile Include="Migrations\202111011757228_UpdateInSession.Designer.cs">
       <DependentUpon>202111011757228_UpdateInSession.cs</DependentUpon>
@@ -104,11 +103,14 @@
     <Compile Include="Migrations\202111011830360_SquiffyInSession.cs" />
     <Compile Include="Migrations\202111011830360_SquiffyInSession.Designer.cs">
       <DependentUpon>202111011830360_SquiffyInSession.cs</DependentUpon>
- </Compile>
+    </Compile>
     <Compile Include="Migrations\202111011713094_MigrateThingsForStuff.cs" />
     <Compile Include="Migrations\202111011713094_MigrateThingsForStuff.Designer.cs">
       <DependentUpon>202111011713094_MigrateThingsForStuff.cs</DependentUpon>
-
+    </Compile>
+    <Compile Include="Migrations\202111031525089_update.cs" />
+    <Compile Include="Migrations\202111031525089_update.Designer.cs">
+      <DependentUpon>202111031525089_update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Student.cs" />
@@ -132,16 +134,17 @@
     <EmbeddedResource Include="Migrations\202110302246092_nwdaa.resx">
       <DependentUpon>202110302246092_nwdaa.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Migrations\202111011757228_UpdateInSession.resx">
       <DependentUpon>202111011757228_UpdateInSession.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111011830360_SquiffyInSession.resx">
       <DependentUpon>202111011830360_SquiffyInSession.cs</DependentUpon>
- </EmbeddedResource>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111011713094_MigrateThingsForStuff.resx">
       <DependentUpon>202111011713094_MigrateThingsForStuff.cs</DependentUpon>
-
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111031525089_update.resx">
+      <DependentUpon>202111031525089_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
